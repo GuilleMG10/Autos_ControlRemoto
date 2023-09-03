@@ -18,5 +18,16 @@ function Devolver_Comandos(comandos)
 {
     return comandos;
 }
+function validar_comandos(comandos)
+{
+    
+for (let i = 0; i < comandos.length; i++) {
+    if(comandos[i]!="A" && comandos[i]!="I" && comandos[i]!="D")
+    {
+        return false;
+    }
+}
+return true;
+}
 
-export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos};
+export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos};

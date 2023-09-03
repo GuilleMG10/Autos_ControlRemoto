@@ -1,4 +1,4 @@
-import { posicionInicial , VerificarFormato_Entrada , Devolver_Comandos} from "./Funciones";
+import { posicionInicial , VerificarFormato_Entrada , Devolver_Comandos , validar_comandos} from "./Funciones";
 
 describe("Funciones", () => {
     it("deberia Devolver a posicion Inicial", () => {
@@ -9,5 +9,11 @@ describe("Funciones", () => {
       });
       it("deberia devolver el comando ingresado", () => {
         expect(Devolver_Comandos("AIADAAAIAD")).toEqual("AIADAAAIAD");
+      });
+      it("deberia devolver si el comando es correcto", () => {
+        expect(validar_comandos("AIADAAAIAD")).toEqual(true);
+      });
+      it(" deberia devolver si el comando NO es correcto", () => {
+        expect(validar_comandos("AIASDAAAIAD")).toEqual(false);
       });
   });
