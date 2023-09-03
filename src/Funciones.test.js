@@ -1,4 +1,4 @@
-import { posicionInicial , VerificarFormato_Entrada , Devolver_Comandos , validar_comandos , ejecutar_Comandos_I_D,ejecutar_Comando_A} from "./Funciones";
+import { posicionInicial , VerificarFormato_Entrada , Devolver_Comandos , validar_comandos , ejecutar_Comandos_I_D,ejecutar_Comando_A,ejecutar} from "./Funciones";
 
 describe("Funciones", () => {
     it("deberia Devolver a posicion Inicial", () => {
@@ -17,12 +17,16 @@ describe("Funciones", () => {
         expect(validar_comandos("AIASDAAAIAD")).toEqual(false);
       });
       it(" deberia mover la orientacion a la Izquierda", () => {
-        expect(ejecutar_Comandos_I_D("I","N")).toEqual(["O"]);
+        expect(ejecutar_Comandos_I_D("I","N")).toEqual("O");
       });
       it(" deberia mover la orientacion a la Derecha", () => {
-        expect(ejecutar_Comandos_I_D("D","N")).toEqual(["E"]);
+        expect(ejecutar_Comandos_I_D("D","N")).toEqual("E");
       });
-      it(" deberia mover la orientacion a la Derecha", () => {
+      it(" deberia mover segun la orientacion", () => {
         expect(ejecutar_Comando_A(5,1,"N")).toEqual([5,2]);
       });
+      it(" deberia mover el auto", () => {
+        expect(ejecutar("ADA",0,0,"N")).toEqual([1,1,"E"]);
+      });
+
   });

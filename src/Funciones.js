@@ -80,7 +80,7 @@ function ejecutar_Comandos_I_D(comando,o)
         }
         
     }
-    return [Orientacion];
+    return Orientacion;
 
     }
 function ejecutar_Comando_A(posicionX,posicionY,or)
@@ -107,7 +107,26 @@ function ejecutar_Comando_A(posicionX,posicionY,or)
         Y=Y-1;
         
     }
-    return [X,Y];
+    return [X,Y]
+}
+function ejecutar(comandos,posicionX,posicionY,or)
+{
+    let Orientacion=or;
+    let X=posicionX;
+    let Y=posicionY;
+    if(validar_comandos(comandos))
+    {
+        for (let i = 0; i < comandos.length; i++) {
+            if(comandos[i]=="A")
+            {
+                [X,Y]=ejecutar_Comando_A(X,Y,Orientacion);
+            }
+            else{
+                Orientacion=ejecutar_Comandos_I_D(comandos[i],Orientacion);
+            }
+        }
+        return [X,Y,Orientacion];
+    }
 }
 
-export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos,ejecutar_Comandos_I_D,ejecutar_Comando_A};
+export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos,ejecutar_Comandos_I_D,ejecutar_Comando_A,ejecutar};
