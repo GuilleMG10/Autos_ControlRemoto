@@ -19,4 +19,7 @@ describe("Funciones", () => {
       it(" deberia mover la orientacion a la Izquierda", () => {
         expect(ejecutar_Comandos("I",5,1,"N")).toEqual([5,1,"O"]);
       });
+      it(" deberia mover la orientacion a la Derecha", () => {
+        expect(ejecutar_Comandos("D",5,1,"N")).toEqual([5,1,"E"]);
+      });
   });
