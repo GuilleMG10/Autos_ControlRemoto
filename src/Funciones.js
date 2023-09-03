@@ -14,5 +14,9 @@ function VerificarFormato_Entrada(posicionX,posicionY,orientacion)
     }
     return false;
 }
+function Devolver_Comandos(comandos)
+{
+    return comandos;
+}
 
-export {posicionInicial,VerificarFormato_Entrada};
+export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos};
