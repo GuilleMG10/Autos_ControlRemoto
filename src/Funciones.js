@@ -29,58 +29,85 @@ for (let i = 0; i < comandos.length; i++) {
 }
 return true;
 }
-function ejecutar_Comandos(comandos,posicionX,posicionY,o)
+function ejecutar_Comandos_I_D(comando,o)
 {
-    let X=posicionX;
-    let Y=posicionY;
+   
     let Orientacion=o;
     if(Orientacion=="N")
     {
-        if(comandos=="I")
+        if(comando=="I")
         {
             Orientacion="O";
         }
-        else if(comandos=="D")
+        else if(comando=="D")
         {
             Orientacion="E";
         }
     }
     if(Orientacion=="O")
     {
-        if(comandos=="I")
+        if(comando=="I")
         {
             Orientacion="S";
         }
-        else if(comandos=="D")
+        else if(comando=="D")
         {
             Orientacion="N";
         }
+       
     }
     if(Orientacion=="E")
     {
-        if(comandos=="I")
+        if(comando=="I")
         {
             Orientacion="N";
         }
-        else if(comandos=="D")
+        else if(comando=="D")
         {
             Orientacion="S";
         }
+       
     }
     if(Orientacion=="S")
     {
-        if(comandos=="I")
+        if(comando=="I")
         {
             Orientacion="O";
         }
-        else if(comandos=="D")
+        else if(comando=="D")
         {
             Orientacion="E";
         }
+        
     }
-    return [X,Y,Orientacion];
+    return [Orientacion];
 
-
+    }
+function ejecutar_Comando_A(posicionX,posicionY,or)
+{
+    let Orientacion=or;
+    let X=posicionX;
+    let Y=posicionY;
+    if(Orientacion=="N")
+    {
+      Y=Y+1;
+    }
+    if(Orientacion=="O")
+    {
+        X=X-1;
+       
+    }
+    if(Orientacion=="E")
+    {
+        X=X+1;
+       
+    }
+    if(Orientacion=="S")
+    {
+        Y=Y-1;
+        
+    }
+    return [X,Y];
 }
 
-export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos,ejecutar_Comandos};
+export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos,ejecutar_Comandos_I_D,ejecutar_Comando_A};
