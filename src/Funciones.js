@@ -1,6 +1,6 @@
-function posicionInicial(posicionX,posicionY)
+function posicionInicial(posicionX,posicionY,orientacion)
 {
-    return [posicionX,posicionY];
+    return [posicionX,posicionY,orientacion];
 }
 
 export {posicionInicial};
