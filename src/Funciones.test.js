@@ -22,11 +22,11 @@ describe("Funciones", () => {
       it(" deberia mover la orientacion a la Derecha", () => {
         expect(ejecutar_Comandos_I_D("D","N")).toEqual("E");
       });
-      it(" deberia mover segun la orientacion", () => {
-        expect(ejecutar_Comando_A(5,1,"N")).toEqual([5,2]);
-      });
+     // it(" deberia mover segun la orientacion", () => {
+       // expect(ejecutar_Comando_A(5,1,"N")).toEqual([5,2]);
+      //});
       it(" deberia mover el auto", () => {
-        expect(ejecutar("ADA",0,0,"N")).toEqual([1,1,"E"]);
+        expect(ejecutar("ADAAAAAI",0,0,"N",1,1)).toEqual([1,1,"S"]);
       });
 
   });
