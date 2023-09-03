@@ -1,5 +1,6 @@
 import { ejecutar } from "./Funciones";
 import { posicionInicial } from "./Funciones";
+import { Devolver_Comandos } from "./Funciones";
 
 const com = document.querySelector("#comando");
 const form = document.querySelector("#ejecutar-form");
@@ -20,5 +21,6 @@ form.addEventListener("submit", (event) => {
       comandos+=comando[i];
    }
    div.innerHTML = "<p>"+"LA POSICION INICIA DEL AUTITO ES:" +posicionInicial(posX,posY,Orientacion) + "</p>";
+   div.innerHTML += "<p>"+"EL COMANDO ES: " +Devolver_Comandos(comandos) + "</p>";
   div.innerHTML += "<p>"+"LA POSICION FINAL DEL AUTITO ES:" +ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";// ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";
 });
