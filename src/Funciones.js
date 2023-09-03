@@ -29,5 +29,58 @@ for (let i = 0; i < comandos.length; i++) {
 }
 return true;
 }
+function ejecutar_Comandos(comandos,posicionX,posicionY,o)
+{
+    let X=posicionX;
+    let Y=posicionY;
+    let Orientacion=o;
+    if(Orientacion=="N")
+    {
+        if(comandos=="I")
+        {
+            Orientacion="O";
+        }
+        else if(comandos=="D")
+        {
+            Orientacion="E";
+        }
+    }
+    if(Orientacion=="O")
+    {
+        if(comandos=="I")
+        {
+            Orientacion="S";
+        }
+        else if(comandos=="D")
+        {
+            Orientacion="N";
+        }
+    }
+    if(Orientacion=="E")
+    {
+        if(comandos=="I")
+        {
+            Orientacion="N";
+        }
+        else if(comandos=="D")
+        {
+            Orientacion="S";
+        }
+    }
+    if(Orientacion=="S")
+    {
+        if(comandos=="I")
+        {
+            Orientacion="O";
+        }
+        else if(comandos=="D")
+        {
+            Orientacion="E";
+        }
+    }
+    return [X,Y,Orientacion];
 
-export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos};
+
+}
+
+export {posicionInicial,VerificarFormato_Entrada,Devolver_Comandos,validar_comandos,ejecutar_Comandos};

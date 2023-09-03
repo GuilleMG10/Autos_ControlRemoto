@@ -1,4 +1,4 @@
-import { posicionInicial , VerificarFormato_Entrada , Devolver_Comandos , validar_comandos} from "./Funciones";
+import { posicionInicial , VerificarFormato_Entrada , Devolver_Comandos , validar_comandos , ejecutar_Comandos} from "./Funciones";
 
 describe("Funciones", () => {
     it("deberia Devolver a posicion Inicial", () => {
@@ -15,5 +15,8 @@ describe("Funciones", () => {
       });
       it(" deberia devolver si el comando NO es correcto", () => {
         expect(validar_comandos("AIASDAAAIAD")).toEqual(false);
+      });
+      it(" deberia mover la orientacion a la Izquierda", () => {
+        expect(ejecutar_Comandos("I",5,1,"N")).toEqual([5,1,"O"]);
       });
   });
