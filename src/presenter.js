@@ -1,15 +1,24 @@
-import sumar from "./sumador";
+import { ejecutar } from "./Funciones";
+import { posicionInicial } from "./Funciones";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const com = document.querySelector("#comando");
+const form = document.querySelector("#ejecutar-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const comando=com.value;
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  const tamX = parseInt(comando[0]);
+  const tamY = parseInt(comando[2]);
+   const posX =  parseInt(comando[4]);
+   const posY= parseInt(comando[6]);
+   const Orientacion = comando[7];
+   let comandos=""
+   for (let i = 9; i < comando.length; i++)
+   {
+      comandos+=comando[i];
+   }
+ 
+  div.innerHTML = "<p>" +ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";// ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";
 });
