@@ -17,7 +17,7 @@ describe("Funciones", () => {
         expect(validar_comandos("AIASDAAAIAD")).toEqual(false);
       });
       it(" deberia mover la orientacion a la Izquierda", () => {
-        expect(ejecutar_Comandos_I_D("I","N")).toEqual("e");
+        expect(ejecutar_Comandos_I_D("I","N")).toEqual("E");
       });
       it(" deberia mover la orientacion a la Derecha", () => {
         expect(ejecutar_Comandos_I_D("D","N")).toEqual("O");
@@ -26,7 +26,7 @@ describe("Funciones", () => {
        // expect(ejecutar_Comando_A(5,1,"N")).toEqual([5,2]);
       //});
       it(" deberia mover el auto", () => {
-        expect(ejecutar("ADAAAAAI",1,1,"N",2,2)).toEqual([1,1,"N"]);
+        expect(ejecutar("ADAAAAAI",1,1,"N",2,2)).toEqual([2,2,"N"]);
       });
 
   });
