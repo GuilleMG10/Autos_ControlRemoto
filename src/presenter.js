@@ -19,6 +19,6 @@ form.addEventListener("submit", (event) => {
    {
       comandos+=comando[i];
    }
- 
-  div.innerHTML = "<p>" +ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";// ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";
+   div.innerHTML = "<p>"+"LA POSICION INICIA DEL AUTITO ES:" +posicionInicial(posX,posY,Orientacion) + "</p>";
+  div.innerHTML += "<p>"+"LA POSICION FINAL DEL AUTITO ES:" +ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";// ejecutar(comandos,posX,posY,Orientacion,tamX,tamY) + "</p>";
 });
